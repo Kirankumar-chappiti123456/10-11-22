@@ -1,0 +1,20 @@
+#include <stdio.h>
+int avg(int[],int);
+int main() {
+   int marks[5]={10,20,30,40,50},average;
+   int size=sizeof(marks)/sizeof(marks[0]);
+   average=avg(marks,size);
+   printf("in main size of an array is %ld",sizeof(marks));
+   printf("%d",average);
+}
+int avg(int marks[],int size)
+{  
+  int sum=0,average=0;
+   for(int i=0;i<size;i++)
+   {
+     sum=sum+marks[i];
+   }
+   average=sum/size;
+    printf("in fun size of an array is %ld",sizeof(marks));
+   return average;
+}
