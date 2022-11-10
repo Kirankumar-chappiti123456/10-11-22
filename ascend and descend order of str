@@ -1,0 +1,109 @@
+without function:
+
+
+#include <stdio.h>
+enum c{FOUND,NOTFOUND};
+enum k{ONE,TWO};
+int main() {
+   char str[]="kiran";
+      for(int i=FOUND;str[i]!='\0';i++)
+      {
+   for(int j=i+NOTFOUND;str[j]!='\0';j++)
+{
+   if(str[j]<str[i])
+   {
+       char temp=str[i];
+      
+       str[i]=str[j];
+       str[j]=temp;
+   }
+}
+   }
+   printf("ascending order of a string: ");
+   
+   for(int i=FOUND;str[i]!='\0';i++)
+
+   printf("%c ",  str[i]);
+
+ for(int i=FOUND;str[i]!='\0';i++)
+      {
+   for(int j=i+NOTFOUND;str[j]!='\0';j++)
+{
+   if(str[j]>str[i])
+   {
+       char temp=str[i];
+      
+       str[i]=str[j];
+       str[j]=temp;
+   }
+}
+   }
+   printf("descending order:");
+   for(int i=FOUND;str[i]!='\0';i++)
+
+   printf("%c",str[i]);
+}
+with functions:
+
+
+#include <stdio.h>
+enum c{FOUND,NOTFOUND};
+enum k{ONE,TWO};
+ void ascend(char str[]);
+   void descend(char str[]);
+int main() {
+   char str[]="kiran";
+   int choice;
+   printf("enter the choice:");
+   scanf("%d",&choice);
+  
+   switch(choice)
+   {
+  case ONE : 
+       ascend(str);
+       break;
+   case TWO: 
+       descend(str);
+   
+}
+}
+void ascend(char str[])
+{
+      for(int i=FOUND;str[i]!='\0';i++)
+      {
+   for(int j=i+NOTFOUND;str[j]!='\0';j++)
+{
+   if(str[j]<str[i])
+   {
+       char temp=str[i];
+      
+       str[i]=str[j];
+       str[j]=temp;
+   }
+}
+   }
+   printf("ascending order of a string: ");
+}  
+void descend(char str[])
+{
+ for(int i=FOUND;str[i]!='\0';i++)
+      {
+   for(int j=i+NOTFOUND;str[j]!='\0';j++)
+{
+   if(str[j]>str[i])
+   {
+       char temp=str[i];
+      
+       str[i]=str[j];
+       str[j]=temp;
+   }
+}
+      }
+   printf("descending order:");
+   for(int i=FOUND;str[i]!='\0';i++)
+
+   printf("%c",str[i]);
+}
+
+
+
