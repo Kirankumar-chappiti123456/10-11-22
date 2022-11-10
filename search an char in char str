@@ -1,0 +1,24 @@
+#include <stdio.h>
+enum error{notfound,found};
+int found_char(char str[],char s)
+{
+    int flag=notfound;
+    for(int i=notfound;str[i]!='\0';i++)
+    {
+    if(str[i]==s)
+    {
+    flag++;
+    break;
+    }
+    }
+  return flag;
+}
+int main() {
+    char str[20]="kirankumar";
+    char ch;
+    int flag=notfound;
+    scanf("%c",&ch);
+   int k=found_char(str,ch);
+    (k==found)?printf("found"):printf("notfound");
+    
+}
